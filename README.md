@@ -65,3 +65,9 @@ payment, and a `0` otherwise.
 [NumPy]: http://www.numpy.org
 [SciPy]: https://www.scipy.org
 [`scikit-learn`]: http://scikit-learn.org
+
+##Approach taken:
+From the dataset given I have tried different kinds of classification models including decision trees, random forrests, SVMs, Linear classifiers and SGDclassifiers and Neural Networks with L2 regularization. This is all using SKlearn's implementation. First I shuffled the rows of the training set before fitting it up to the model. After which, it was run while tunning hyperparameters. Results are:
+Accuracy:  80.160%
+Precision: 57.889%
+Recall:    31.346%
