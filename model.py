@@ -1,33 +1,55 @@
 import numpy as np
-
-
-class CreditModel:
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neural_network import MLPClassifier
+from sklearn.linear_model import SGDClassifier
+from sklearn import svm
+class CreditModelDecisionTree:
     def __init__(self):
-        """
-        Instantiates the model object, creating class variables if needed.
-        """
-
-        # TODO: Initialize your model object.
-        pass
+        self.model = DecisionTreeClassifier(n_estimators=100, max_depth=50)
 
     def fit(self, X_train, y_train):
-        """
-        Fits the model based on the given `X_train` and `y_train`.
-
-        You should somehow manipulate and store this data to your model class
-        so that you can make predictions on new testing data later on.
-        """
-
-        # TODO: Fit your model based on the given X and y.
-        pass
+        self.model.fit(X_train, y_train)
 
     def predict(self, X_test):
-        """
-        Returns `y_hat`, a prediction for a given `X_test` after fitting.
+        return self.model.predict(X_test)
 
-        You should make use of the data that you stored/computed in the
-        fitting phase to make your prediction on this new testing data.
-        """
+class CreditModelRandomForestClassifier:
+    def __init__(self):
+        self.model = RandomForestClassifier(n_estimators=100, max_depth=50)
 
-        # TODO: Predict on `X_test` based on what you learned in the fit phase.
-        return np.random.randint(2, size=len(X_test))
+    def fit(self, X_train, y_train):
+        self.model.fit(X_train, y_train)
+
+    def predict(self, X_test):
+        return self.model.predict(X_test)
+
+class CreditModelMLPClassifier:
+    def __init__(self):
+        self.model = MLPClassifier(hidden_layer_sizes=(100, ),)
+
+    def fit(self, X_train, y_train):
+        self.model.fit(X_train, y_train)
+
+    def predict(self, X_test):
+        return self.model.predict(X_test)
+
+class CreditModelSGDClassifier:
+    def __init__(self):
+        self.model = SGDClassifier()
+
+    def fit(self, X_train, y_train):
+        self.model.fit(X_train, y_train)
+
+    def predict(self, X_test):
+        return self.model.predict(X_test)
+
+class CreditModelSVM:
+    def __init__(self):
+        self.model = svm.SVR()
+
+    def fit(self, X_train, y_train):
+        self.model.fit(X_train, y_train)
+
+    def predict(self, X_test):
+        return self.model.predict(X_test)

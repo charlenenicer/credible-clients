@@ -1,8 +1,7 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score
-
-from model import CreditModel
+from model import RandomForestClassifier
 
 
 def main():
@@ -12,7 +11,7 @@ def main():
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
     # Fit the model against the training data.
-    model = CreditModel()
+    model = RandomForestClassifier()
     model.fit(X_train, y_train)
 
     # Predict against test data and ensure `y_hat` returns ints.
